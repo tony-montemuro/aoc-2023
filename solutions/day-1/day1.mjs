@@ -1,12 +1,7 @@
 import readPuzzle from "../../read.mjs";
 
-const main = async () => {
-    // read data
-    const data = await readPuzzle();
-    const lines = data.split("\n");
-
-    // PART 1
-    let vals = [];
+const part1 = lines => {
+    const vals = [];
     lines.forEach(line => {
         // find first value
         let first;
@@ -36,11 +31,12 @@ const main = async () => {
         vals.push(first*10 + last);
     });
 
-    // result 1 - sum of all values
-    console.log(vals.reduce((a, b) => a + b));
+    // return sum of all values
+    return vals.reduce((a, b) => a + b);
+};
 
-    // PART 2
-    vals = [];
+const part2 = lines => {
+    const vals = [];
     const nums = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
     lines.forEach(line => {
         // find first value
@@ -88,8 +84,14 @@ const main = async () => {
         vals.push(first*10 + last);
     });
 
-    // result 2 - sum of all values
-    console.log(vals.reduce((a, b) => a + b));
+    // return sum of all values
+    return vals.reduce((a, b) => a + b);
+};
+
+const main = async () => {
+    const data = await readPuzzle();
+    const lines = data.split("\n");
+    console.log(part1(lines), part2(lines));
 };
 
 main();
