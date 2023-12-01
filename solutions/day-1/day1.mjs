@@ -83,7 +83,6 @@ const main = async () => {
             }
             index -= 1;
         }
-        index += 1;
         
         // push value to array
         vals.push(first*10 + last);
