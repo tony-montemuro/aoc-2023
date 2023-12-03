@@ -2,7 +2,7 @@ import readPuzzle from "../../read.mjs";
 
 const isDigit = c => {
     return c >= "0" && c <= "9";
-}
+};
 
 const isSpecial = c => {
     return !isDigit(c) && c !== ".";
