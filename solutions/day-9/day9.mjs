@@ -10,12 +10,10 @@ const p1 = differences => {
 
 const p2 = differences => {
     let digit = differences.at(-1)[0];
-    const digits = [];
     for (let i = differences.length-2; i >= 0; i--) {
         digit = differences[i][0]-digit;
-        digits.push(digit);
     }
-    return digits.at(-1);
+    return digit;
 };
 
 const extrapolationSum = (sequences, extrapolator) => {
